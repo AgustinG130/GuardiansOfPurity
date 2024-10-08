@@ -6,6 +6,8 @@ import lemon from '../Game/img/lemon.png'
 import jugDetergent from '../Game/img/jugDetergent.png'
 import bottleDroplet from '../Game/img/bottleDroplet.png'
 import { PauseButton } from '../../atoms/PauseButton';
+import { InstructionButton } from '../../atoms/instructionButton';
+import Instructions from '../Instructions/Instructions';
 
 export default function Game() 
 {
@@ -16,6 +18,8 @@ export default function Game()
     const [points, setPoints] = useState(0);
     const [lasagnaCaught, setLasagnaCaught] = useState(false)
     const [phLevel, setPhLevel] = useState(7.0)
+    const [isPaused, setIsPaused] = useState(false); // Usa useState para el botón de pausa
+    const [information, setInformation] = useState(false);
 
     const icons = [soap, lemon, jugDetergent, bottleDroplet]
     const [randomIcon, setRandomIcon] = useState(soap)
@@ -24,8 +28,7 @@ export default function Game()
 
     let marginTop = 0;
     let lastDirection = "right";
-    
-    let isPaused = useRef(false);
+
     let isHelpPaused = useRef(false);
     let prevSpeedPlayer = useRef();
     let prevSpeedLasagna = useRef();
@@ -71,6 +74,12 @@ export default function Game()
             {
                 player.current.dx =- player.current.speed;
             }
+            if (e.key === "i") {
+                toggleInstruction();
+            }
+            if (e.key === "Escape") {
+                togglePause();
+            }
         };
 
         const handleKeyUp = (e) => 
@@ -80,11 +89,10 @@ export default function Game()
                 player.current.dx = 0;
             }
         };
-
+        
         document.addEventListener("keydown", handleKeyDown);
         document.addEventListener("keyup", handleKeyUp);
 
-        // Limpieza de eventos
         return () => 
         {
             document.removeEventListener("keydown", handleKeyDown);
@@ -180,7 +188,7 @@ export default function Game()
 
     function pointsDifficulty() 
     {
-        if (isPaused.current) return;
+        if (isPaused) return;
 
         if (points > 12)
         {
@@ -219,7 +227,7 @@ export default function Game()
 
     function update() 
     {
-        if (isPaused.current) return;
+        if (isPaused) return;
         clear();
         drawLasagnaAndPlayer();
         detectCollision();
@@ -254,32 +262,52 @@ export default function Game()
     const togglePause = () => {
          if (isHelpPaused.current) return;
     
-        isPaused.current = !isPaused.current;
-        if (isPaused.current) {
+        setIsPaused((prev) => !prev);
+        
+        if (!isPaused) {
             prevSpeedPlayer.current = player.current.speed;
             prevSpeedLasagna.current = lasagna.current.speed;
             player.current.speed = 0;
             lasagna.current.speed = 0;
+            console.log('juego pausado');
         } else {
             player.current.speed = prevSpeedPlayer.current;
             lasagna.current.speed = prevSpeedLasagna.current;
+            console.log('juego reanudado')
             update();
         }
     };    
 
+    const toggleInstruction = () => {
+        if (isHelpPaused.current) return;
+        setInformation((prev) => !prev); 
+        togglePause();
+    };
+    
     return (
-        <div id='game'>
-            <PauseButton onClick={togglePause} isPaused={isPaused.current} />
-            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-            <label id='points'>Points: {points}</label>
+        <div id='container'>
+            <div id='buttons'>
+                <PauseButton onClick={togglePause} isPaused={isPaused} />
+                <InstructionButton onClickInstruction={toggleInstruction} information={information} />
             </div>
-            <div id='background' style={{ display: "flex" }}>
-                <canvas ref={canvasRef} id="gameCanvas" width="800" height="500"></canvas>
-                <div id="ph">
-                    <div id="line" />
+            {information && (
+            <div className="popup-game">
+                <div className="popup-inner-game">
+                    <Instructions/>
+                </div>
+            </div>
+            )}
+            <div id='game'>
+                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                    <label id='points'>Points: {points}</label>
+                </div>
+                <div id='background' style={{ display: "flex" }}>
+                    <canvas ref={canvasRef} id="gameCanvas" width="800" height="500"></canvas>
+                    <div id="ph">
+                        <div id="line" className="line"></div>
+                    </div>
                 </div>
             </div>
         </div>
     );
 }
-
