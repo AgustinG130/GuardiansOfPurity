@@ -1,0 +1,159 @@
+@import url('https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css');
+
+::-webkit-scrollbar 
+{
+    width: 10px;
+}
+::-webkit-scrollbar-thumb 
+{
+    background: rgba(31, 102, 140, 0.2); 
+}
+
+.instructions-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+    width: 100%;
+    padding: 20px;
+ 
+}
+
+.instructions-title {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center; 
+    margin-top: 20px;
+}
+
+.instructions-info {
+    max-width: 700px;
+    width: 100%;
+    color: #10506b;
+    border-radius: 10px;
+    background-color: #81caf1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #81caf1;
+    color:#10506b;
+    width: 100%;
+    max-width: 500px;
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#control-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #10506b
+}
+
+.control-items {
+    text-align: left;
+    width: 100%;
+}
+
+.game-info 
+{
+    font-size: 18px;
+    font-weight: 500;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.bi {
+    font-size: 20px;
+}
+
+#content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.items {
+    text-align: left;
+    padding-left: 20px;
+}
+
+.items li {
+    margin: 10px 0;
+}
+
+.item-icons li {
+    list-style-type: none;
+}
+
+.icon {
+    font-size: 30px;
+    margin-right: 5px;
+}
+
+.game-mecanic {
+    margin-top: 50px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+#rules, #object-title {
+    text-align: left;
+    margin-left: 0;
+    font-weight: bold;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+#game-mecanics-title {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #10506b;
+}
+
+.rules, .objects {
+    width: 100%;
+    color: #10506b;
+    background-color: #81caf1;
+    margin-top: 20px;
+    border-radius: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+}
+
+.rules {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.objects {
+    display: flex;
+    flex-direction: column;
+}
+
+.icons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+

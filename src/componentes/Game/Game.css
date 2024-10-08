@@ -1,0 +1,48 @@
+
+#gameCanvas {
+    background-image: url('../Game/img/background-gamex4.png');
+    background-size:1100px; 
+    display: block;
+    margin: 0 auto;
+    background-position: center;
+}
+
+#points{
+    font-size: 35px;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+   color: #0b374a;
+}
+
+#game{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#ph
+{
+    width: 160px;
+    height: 500px;
+    align-items: end;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url("../Game/img/PH-water-level.png");
+}
+
+
+#line
+{
+    background-color: black;
+    width: 50px;
+    max-width: 50px;
+    height: 5px;
+    position: relative;
+}
+
