@@ -1,5 +1,25 @@
+
+h1 {
+  /* color: #FF6347; */
+  /* font-size: 2.5rem; */
+  animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+@keyframes pop {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.1); }
+}
+
+.icon {
+  animation: pop 0.5s infinite alternate;
+}
+
 .card {
-  background-color: #e0f7fa;
+  background-color: rgba(102, 188, 225, 0.9);
   border-radius: 10px;
   padding: 15px;
   margin: 10px 0;

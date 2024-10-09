@@ -1,51 +1,42 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './information.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTemperatureHalf, faEarthAmericas, faDroplet, faBullseye,faQuestion } from '@fortawesome/free-solid-svg-icons';
+import { faTemperatureHalf, faEarthAmericas, faDroplet, faBullseye,faQuestion , faSun, faUserSecret, faFrog, faFish, faWater, faSeedling, faTemperatureQuarter, faLemon, faSoap, faHeart, faStar} from '@fortawesome/free-solid-svg-icons';
 
 export default function InformationPage() {
-
     return (
-        <div className = "information-container">
-          <h1 className="information-title" style={{ color: "#10506b"}}>
-            INFORMATION
-          </h1>
+        <div className = "information-container"> 
+          <h1 className="information-title" style={{ color: "#10506b", fontSize:"2.5rem"}}><FontAwesomeIcon className='icon' icon={faStar} style={{color: "#fbcd28", fontSize: "30px"}} /> Guardians of the Planet  <FontAwesomeIcon className='icon' icon={faStar} style={{color: "#fbcd28", fontSize: "30px"}} /></h1>
           <div className="mb-8 card">
-            <h2 className = "information-second-title" ><FontAwesomeIcon icon={faEarthAmericas} flip style={{color: "#0433FF", fontSize: "22px"}}/> GLOBE Protocols: Science at Your Fingertips!</h2>
+            <FontAwesomeIcon className='icon' icon={faEarthAmericas} style={{color: "#0433FF", fontSize: "40px", alignItems:'center'}}/> 
+            <h2 className = "information-second-title" >GLOBE Protocols: Science at Your Fingertips!</h2>
             <p className="text-lg text-gray-700 leading-relaxed">
-            GLOBE Protocols are innovative procedures for collecting scientific data about the environment, organized around Earth's spheres: atmosphere, biosphere, hydrosphere, and pedosphere. 
-            Sponsored by NASA, these protocols promote scientific education and collaborative research on a global scale. From measuring air temperature to analyzing water pH and soil moisture, each protocol utilizes specific instruments that meet rigorous GLOBE standards. 
-            Join us in becoming a champion for our planet!
+            Become a Planet Protector! <FontAwesomeIcon icon={faSeedling} style={{color: "#34a02c"}} /> With GLOBE Protocols, you can help scientists learn about Earth’s air, water, soil, and plants! <FontAwesomeIcon icon={faSun} style={{color: "#FFD43B"}} /> It's easy and fun, and you’re part of a big team of kids around the world helping protect our planet.
             </p>
           </div>
           <div className="mb-8 card">
-            <h2 className = "information-second-title"><FontAwesomeIcon icon={faDroplet} bounce style={{color: "#78b4e2", fontSize: "22px"}}/> Hydrosphere: Monitor and Understand Our Water Bodies!</h2>
+            <FontAwesomeIcon className='icon' icon={faDroplet} style={{color: "#2881e2", fontSize: "40px", alignItems:'center'}}/> 
+            <h2 className = "information-second-title"> Dive into the World of Water! </h2>
             <p className="text-lg text-gray-700 leading-relaxed">
-            The hydrosphere encompasses all of Earth’s surface waters, including rivers, lakes, streams, and coastal areas. 
-            Through GLOBE research in this sphere, we can monitor and comprehend the conditions of these vital waters, observing how they change throughout the year and over time. 
-            With protocols that include measuring water pH and temperature, we are equipped to protect and preserve this essential resource. Dive into the hydrosphere and be part of the change!
+            The hydrosphere is a big word that means all the water on Earth! That includes rivers, lakes, oceans, and even little streams where frogs and fish play! <FontAwesomeIcon icon={faFrog} style={{color: "#2a7e38"}} /> <FontAwesomeIcon icon={faFish} style={{color: "#225bbf"}} />
+            <br/>Through GLOBE research, we get to be like water detectives! <FontAwesomeIcon icon={faUserSecret} style={{color: "#2881e2"}} /> <FontAwesomeIcon icon={faUserSecret} style={{color: "#f394ff"}} /> We can learn how water changes with the seasons, check its temperature, and see if it's healthy. By measuring things like water pH (which shows if water is too sour or too soapy) and temperature, we help keep our rivers, lakes, and oceans safe and clean. <FontAwesomeIcon icon={faSun} style={{color: "#FFD43B"}} /> <FontAwesomeIcon icon={faWater} style={{color: "#2881e2"}} />
+            <br/>So, jump in and become a Water Hero! Together, we can protect all the amazing water on our planet! <FontAwesomeIcon icon={faDroplet} style={{color: "#2881e2"}}/> 
             </p>
           </div>
           <div className="mb-8 card">
-            <h2 className = "information-second-title" ><FontAwesomeIcon icon={faTemperatureHalf} style={{color: "#008000", fontSize: "22px"}} />  pH: The Key to Understanding Our Ecosystems!</h2>
+            <FontAwesomeIcon className='icon' icon={faTemperatureHalf} style={{color: "#008000", fontSize: "40px", alignItems:'center'}} />
+            <h2 className = "information-second-title" >pH: Check Our Water’s Health!</h2>
             <p className="text-lg text-gray-700 leading-relaxed">
-            pH is a fundamental measure that indicates the acidity or alkalinity of a solution, based on the concentration of hydrogen ions. 
-            On a scale from 0 to 14, where 7 is neutral, solutions with a pH less than 7 are considered acidic, while those above 7 are alkaline. Understanding pH is crucial for deciphering the chemistry of water and its impact on the life that depends on it. 
-            Explore the world of pH and discover its significance in the ecosystem!
+            pH is like a water "health meter" <FontAwesomeIcon icon={faTemperatureQuarter} style={{color: "#f1933b"}} /> ! Numbers go from 0 to 14. Right in the middle, 7, means just right. Below 7 is sour like lemon <FontAwesomeIcon icon={faLemon} style={{color: "#FFD43B"}} />, and above 7 is soapy like soap <FontAwesomeIcon icon={faSoap} style={{color: "#63E6BE"}} />. 
+            <br/>Knowing pH helps us keep our water healthy for fish and plants!
             </p>
           </div>
           <div className="mb-8 card">
-            <h2 className = "information-second-title" ><FontAwesomeIcon icon={faBullseye} style={{color: "#fb4b4b", fontSize: "22px"}}/> Our Mission: Environmental Awareness Through Play!</h2>
+            <FontAwesomeIcon className='icon' icon={faSeedling} style={{color: "#34a02c", fontSize: "40px", alignItems:'center'}} /> 
+            <h2 className = "information-second-title" >Our Mission: Learn & Play for a Better Planet!</h2>
             <p className="text-lg text-gray-700 leading-relaxed">
-            Our goal is to create a simple and accessible game that, supported by GLOBE's information and protocols on the hydrosphere, raises public awareness about the importance of this vital resource. 
-            Through an engaging gameplay experience, we aim to encourage reflection on the state of Earth's surface waters and the need for their conservation. Play, learn, and take action!
-            </p>
-          </div>
-          <div className="mb-8 card">
-            <h2 className = "information-second-title" ><FontAwesomeIcon icon={faQuestion} shake style={{color: "#e7ca08", fontSize: "22px"}} /> Why We Chose This Game?</h2>
-            <p className="text-lg text-gray-700 leading-relaxed">
-            We believe this approach is an attractive proposal to achieve our goal of raising user awareness about the environment and GLOBE protocols, particularly concerning the hydrosphere. 
-            While primarily geared towards a child audience, we’ve designed the game to keep its message and purpose relevant and effective for users of all ages. Join the fun and contribute to a more sustainable future!
+            Our game is made to be fun and easy for everyone to play! With help from GLOBE's special water science, we want to teach people about the importance of water and why it needs our help! <FontAwesomeIcon icon={faEarthAmericas} style={{color: "#0433FF"}}/> <FontAwesomeIcon icon={faHeart} style={{color: "#426fbd"}} />
+            <br/>By playing, you’ll learn about the amazing waters on Earth—like rivers, lakes, and oceans—and why we need to protect them. Each level lets you be a Water Hero, taking care of our planet’s water! So, let’s play, learn, and make a difference together! <FontAwesomeIcon icon={faDroplet} style={{color: "#2881e2"}}/> <FontAwesomeIcon icon={faStar} style={{color: "#fbcd28"}} />
             </p>
           </div>
       </div>
