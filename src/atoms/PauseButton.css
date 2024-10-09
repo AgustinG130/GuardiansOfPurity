@@ -1,4 +1,5 @@
-#pause {
+#pause 
+{
     background: #10506b;
     border-radius: 50%; 
     width: 50px;
@@ -6,15 +7,15 @@
     color: white;
     display: flex;
     justify-content: center;
-    align-items: center;
-    position: fixed; 
+    align-items: center; 
     right: 300px; 
     top: 70px; 
     cursor: pointer;
     z-index: 6;
 }
 
-#instructions{
+#instructions
+{
     background: #10506b;
     border-radius: 50%; 
     width: 50px;
@@ -23,7 +24,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    position: fixed; 
     right: 240px; 
     top: 70px; 
     cursor: pointer;

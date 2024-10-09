@@ -182,7 +182,6 @@ export default function Game()
             setLasagnaCaught(true)
             const newIcon = getRandomIcon();
             setRandomIcon(newIcon);
-
         }
     }
 
@@ -225,6 +224,8 @@ export default function Game()
         ctxRef.current?.clearRect(0, 0, canvasRef.current?.width, canvasRef.current?.height);
     }
 
+    let animationframe;
+
     function update() 
     {
         if (isPaused) return;
@@ -234,14 +235,18 @@ export default function Game()
         movePlayer();
         moveLasagna();
         pointsDifficulty();
-        requestAnimationFrame(update);
+        animationframe = requestAnimationFrame(update);
     }
 
     useEffect(() => 
     {
         lasagnaImgRef.current.onload = () =>
         {
-            update();
+            if (animationframe)
+            {
+                cancelAnimationFrame(animationframe)
+            }
+            update()
         };
     }, []);
 
@@ -259,18 +264,22 @@ export default function Game()
         }
     }, [phLevel]);
 
-    const togglePause = () => {
-         if (isHelpPaused.current) return;
+    const togglePause = () => 
+    {
+        if (isHelpPaused.current) return;
     
         setIsPaused((prev) => !prev);
         
-        if (!isPaused) {
+        if (!isPaused) 
+        {
             prevSpeedPlayer.current = player.current.speed;
             prevSpeedLasagna.current = lasagna.current.speed;
             player.current.speed = 0;
             lasagna.current.speed = 0;
             console.log('juego pausado');
-        } else {
+        } 
+        else 
+        {
             player.current.speed = prevSpeedPlayer.current;
             lasagna.current.speed = prevSpeedLasagna.current;
             console.log('juego reanudado')
@@ -278,7 +287,8 @@ export default function Game()
         }
     };    
 
-    const toggleInstruction = () => {
+    const toggleInstruction = () => 
+    {
         if (isHelpPaused.current) return;
         setInformation((prev) => !prev); 
         togglePause();
@@ -286,10 +296,6 @@ export default function Game()
     
     return (
         <div id='container'>
-            <div id='buttons'>
-                <PauseButton onClick={togglePause} isPaused={isPaused} />
-                <InstructionButton onClickInstruction={toggleInstruction} information={information} />
-            </div>
             {information && (
             <div className="popup-game">
                 <div className="popup-inner-game">
@@ -298,8 +304,12 @@ export default function Game()
             </div>
             )}
             <div id='game'>
-                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width:"100%" }}>
                     <label id='points'>Points: {points}</label>
+                    <div id='buttons' style={{display:"flex", gap:"15px"}}>
+                        <PauseButton onClick={togglePause} isPaused={isPaused} />
+                        <InstructionButton onClickInstruction={toggleInstruction} information={information} />
+                    </div>
                 </div>
                 <div id='background' style={{ display: "flex" }}>
                     <canvas ref={canvasRef} id="gameCanvas" width="800" height="500"></canvas>
@@ -311,3 +321,4 @@ export default function Game()
         </div>
     );
 }
+
