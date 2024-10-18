@@ -185,34 +185,28 @@ export default function Game()
         }
     }
 
-    function pointsDifficulty() 
-    {
+    useEffect(() => {
         if (isPaused) return;
 
-        if (points > 12)
-        {
+        if (points > 12) {
             lasagna.current.speed = 1.6;
         }
-        if (points > 25) 
-        {
+        if (points > 25) {
             lasagna.current.speed = 2;
         }
-        if (points > 45) 
-        {
+        if (points > 45) {
             lasagna.current.speed = 2.3;
             player.current.speed = 3.3;
         }
-        if (points > 80) 
-        {
+        if (points > 80) {
             lasagna.current.speed = 2.7;
             player.current.speed = 4.0;
         }
-        if (points > 120) 
-        {
+        if (points > 120) {
             lasagna.current.speed = 3.3;
             player.current.speed = 5;
         }
-    }
+    }, [points, isPaused]);
 
     function getRandomIcon()
     {
@@ -234,7 +228,6 @@ export default function Game()
         detectCollision();
         movePlayer();
         moveLasagna();
-        pointsDifficulty();
         animationframe = requestAnimationFrame(update);
     }
 
