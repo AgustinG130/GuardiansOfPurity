@@ -1,4 +1,4 @@
-import {useState } from 'react';
+import { useState } from 'react';
 import './Main.css';
 import Instructions from '../Instructions/Instructions.jsx';
 import Game from '../Game/Game.jsx';
@@ -26,67 +26,167 @@ function Main() {
         setNext(!next);
     };
 
-    return(
-        <container className="container-fluid">
-            { information && (
+    return (
+        <div className="container-fluid">
+            {information && (
                 <div className="info-page">
-                    <Information/>
-                    <div className='mt-3 close-btn-container'>
-                        <button className={`menu-btn d-flex justify-content-center align-items-center`} style={{ fontSize: '26px', fontWeight: '700', fontFamily:'monospace', color:'#10506b'}} onClick={() => {  toggleInformation();}}> GO BACK </button>
-                        <button className={`menu-btn d-flex justify-content-center align-items-center`} style={{ fontSize: '26px', fontWeight: '700', fontFamily:'monospace', color:'#10506b'}} onClick={() => { toggleNext(); toggleInformation();}}>NEXT</button>
+                    <Information />
+                    <div className="mt-3 close-btn-container">
+                        <button
+                            className="menu-btn d-flex justify-content-center align-items-center"
+                            style={{
+                                fontSize: '26px',
+                                fontWeight: '700',
+                                fontFamily: 'monospace',
+                                color: '#10506b',
+                            }}
+                            onClick={toggleInformation}
+                        >
+                            GO BACK
+                        </button>
+                        <button
+                            className="menu-btn d-flex justify-content-center align-items-center"
+                            style={{
+                                fontSize: '26px',
+                                fontWeight: '700',
+                                fontFamily: 'monospace',
+                                color: '#10506b',
+                            }}
+                            onClick={() => {
+                                toggleNext();
+                                toggleInformation();
+                            }}
+                        >
+                            NEXT
+                        </button>
                     </div>
                 </div>
-            ) }
-            { next && !game && !showPopup && (
+            )}
+            {next && !game && !showPopup && (
                 <div>
-                    <h1 id='title' className='menu-title d-flex flex-row justify-content-center align-items-center '>Guardians of Purity</h1>
-                    <div className='main-menu'>
-                        <div className='mb-3 d-flex flex-row justify-content-center align-items-center'>
-                            <button className={`menu-btn d-flex justify-content-center align-items-center`} style={{ fontSize: '26px', fontWeight: '700', fontFamily:'monospace', color:'#10506b'}} onClick={toggleGame}>PLAY</button>
+                    <h1
+                        id="title"
+                        className="menu-title d-flex flex-row justify-content-center align-items-center"
+                    >
+                        Guardians of Purity
+                    </h1>
+                    <div className="main-menu">
+                        <div className="mb-3 d-flex flex-row justify-content-center align-items-center">
+                            <button
+                                className="menu-btn d-flex justify-content-center align-items-center"
+                                style={{
+                                    fontSize: '26px',
+                                    fontWeight: '700',
+                                    fontFamily: 'monospace',
+                                    color: '#10506b',
+                                }}
+                                onClick={toggleGame}
+                            >
+                                PLAY
+                            </button>
                         </div>
-                        <div className='mb-3 d-flex flex-row justify-content-center align-items-center'>
-                            <button className={`menu-btn d-flex justify-content-center align-items-center`} style={{ fontSize: '26px', fontWeight: '700', fontFamily:'monospace', color:'#10506b'}} onClick={togglePopup} >INSTRUCTIONS</button>
+                        <div className="mb-3 d-flex flex-row justify-content-center align-items-center">
+                            <button
+                                className="menu-btn d-flex justify-content-center align-items-center"
+                                style={{
+                                    fontSize: '26px',
+                                    fontWeight: '700',
+                                    fontFamily: 'monospace',
+                                    color: '#10506b',
+                                }}
+                                onClick={togglePopup}
+                            >
+                                INSTRUCTIONS
+                            </button>
                         </div>
-                        <div className='mb-3 d-flex flex-row justify-content-center align-items-center'>
-                            <button className={`menu-btn d-flex justify-content-center align-items-center`} style={{ fontSize: '26px', fontWeight: '700', fontFamily:'monospace', color:'#10506b'}} onClick={() => { toggleNext(); toggleInformation(); }}> GO BACK </button>
+                        <div className="mb-3 d-flex flex-row justify-content-center align-items-center">
+                            <button
+                                className="menu-btn d-flex justify-content-center align-items-center"
+                                style={{
+                                    fontSize: '26px',
+                                    fontWeight: '700',
+                                    fontFamily: 'monospace',
+                                    color: '#10506b',
+                                }}
+                                onClick={() => {
+                                    toggleNext();
+                                    toggleInformation();
+                                }}
+                            >
+                                GO BACK
+                            </button>
                         </div>
                     </div>
                 </div>
             )}
-            {game && (   
+            {game && (
                 <div>
-                    <Game/>
-                    <div className='mt-3 close-btn-container'>
-                        <button className='close-btn' style={{ fontSize: '26px', fontWeight: '700', fontFamily:'monospace', color:'#10506b'}} onClick={toggleGame}>CLOSE</button>
+                    <Game />
+                    <div className="mt-3 close-btn-container">
+                        <button
+                            className="close-btn"
+                            style={{
+                                fontSize: '26px',
+                                fontWeight: '700',
+                                fontFamily: 'monospace',
+                                color: '#10506b',
+                            }}
+                            onClick={toggleGame}
+                        >
+                            CLOSE
+                        </button>
                     </div>
                 </div>
-                
             )}
             {showPopup && (
                 <div className="popup">
                     <div className="popup-inner">
-                        <Instructions/>
-                        <div className='close-btn-container'>
-                            <button className='close-btn' style={{ fontSize: '26px', fontWeight: '700', fontFamily:'monospace', color:'#10506b'}} onClick={togglePopup}>CLOSE</button>
+                        <Instructions />
+                        <div className="close-btn-container">
+                            <button
+                                className="close-btn"
+                                style={{
+                                    fontSize: '26px',
+                                    fontWeight: '700',
+                                    fontFamily: 'monospace',
+                                    color: '#10506b',
+                                }}
+                                onClick={togglePopup}
+                            >
+                                CLOSE
+                            </button>
                         </div>
                     </div>
                 </div>
-             )}
+            )}
             {!next && !information && !game && !showPopup && (
                 <div>
-                    <h1 id='title' className='menu-title d-flex flex-row justify-content-center align-items-center '>Guardians of Purity</h1>
-                    <div className='main-menu'>
-                        <div className='mb-3 d-flex flex-row justify-content-center align-items-center'>
-                            <button className={`menu-btn d-flex justify-content-center align-items-center`} style={{ fontSize: '26px', fontWeight: '700', fontFamily:'monospace' ,color:'#10506b'}} onClick={toggleInformation}>GET STARTED</button>
+                    <h1
+                        id="title"
+                        className="menu-title d-flex flex-row justify-content-center align-items-center"
+                    >
+                        Guardians of Purity
+                    </h1>
+                    <div className="main-menu">
+                        <div className="mb-3 d-flex flex-row justify-content-center align-items-center">
+                            <button
+                                className="menu-btn d-flex justify-content-center align-items-center"
+                                style={{
+                                    fontSize: '26px',
+                                    fontWeight: '700',
+                                    fontFamily: 'monospace',
+                                    color: '#10506b',
+                                }}
+                                onClick={toggleInformation}
+                            >
+                                GET STARTED
+                            </button>
                         </div>
                     </div>
                 </div>
-            ) }
-            
-            
-        </container>
-    ); 
-  }
- 
-  export default Main;
-  
+            )}
+        </div>
+    );
+}
+
+export default Main;
