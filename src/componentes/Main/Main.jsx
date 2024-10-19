@@ -1,5 +1,4 @@
-import { useEffect, useState } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import {useState } from 'react';
 import './Main.css';
 import Instructions from '../Instructions/Instructions.jsx';
 import Game from '../Game/Game.jsx';

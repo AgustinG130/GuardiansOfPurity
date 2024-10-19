@@ -16,22 +16,22 @@ export default function Game()
     const robotImage = process.env.PUBLIC_URL + '/robot.png';
 
     const [points, setPoints] = useState(0);
-    const [lasagnaCaught, setLasagnaCaught] = useState(false)
+    const [IconCaught, setIconCaught] = useState(false)
     const [phLevel, setPhLevel] = useState(7.0)
-    const [isPaused, setIsPaused] = useState(false); // Usa useState para el botón de pausa
+    const [isPaused, setIsPaused] = useState(false); 
     const [information, setInformation] = useState(false);
 
     const icons = [soap, lemon, jugDetergent, bottleDroplet]
     const [randomIcon, setRandomIcon] = useState(soap)
 
-    const lasagnaImgRef = useRef(new Image()); 
+    const IconImgRef = useRef(new Image()); 
 
     let marginTop = 0;
     let lastDirection = "right";
 
     let isHelpPaused = useRef(false);
     let prevSpeedPlayer = useRef();
-    let prevSpeedLasagna = useRef();
+    let prevSpeedIcon = useRef();
 
     const player = useRef({
         width: 50,
@@ -42,7 +42,7 @@ export default function Game()
         dx: 0
     });
 
-    const lasagna = useRef({
+    const Icon = useRef({
         width: 50,
         height: 50,
         x: 0,
@@ -100,12 +100,12 @@ export default function Game()
         };
     }, []);
 
-    function drawLasagnaAndPlayer() 
+    function drawIconAndPlayer() 
     {
         const ctx = ctxRef.current;
         if (!ctx) return;
 
-        ctx.drawImage(lasagnaImgRef.current, lasagna.current.x, lasagna.current.y, lasagna.current.width, lasagna.current.height);
+        ctx.drawImage(IconImgRef.current, Icon.current.x, Icon.current.y, Icon.current.width, Icon.current.height);
 
         let imageWidth = 100;
         let imageHeight = 100;
@@ -140,13 +140,13 @@ export default function Game()
         }
     }
 
-    function moveLasagna() 
+    function moveIcon() 
     {
-        lasagna.current.y += lasagna.current.speed;
+        Icon.current.y += Icon.current.speed;
 
-        if (lasagna.current.y > canvasRef.current?.height) 
+        if (Icon.current.y > canvasRef.current?.height) 
         {
-            if (!lasagnaCaught && lasagnaImgRef.current?.src.includes(soap) || lasagnaImgRef.current?.src.includes(jugDetergent)) 
+            if (!IconCaught && IconImgRef.current?.src.includes(soap) || IconImgRef.current?.src.includes(jugDetergent)) 
             {
                 marginTop -= 3;
                 setPhLevel((ph) => ph + 0.5)
@@ -159,7 +159,7 @@ export default function Game()
                 }
                 setRandomIcon(getRandomIcon())
             }
-            else if (!lasagnaCaught && lasagnaImgRef.current?.src.includes(bottleDroplet) || lasagnaImgRef.current?.src.includes(lemon))
+            else if (!IconCaught && IconImgRef.current?.src.includes(bottleDroplet) || IconImgRef.current?.src.includes(lemon))
             {
                 marginTop += 3;
                 setPhLevel((ph) => ph - 0.5)
@@ -173,9 +173,9 @@ export default function Game()
                 setRandomIcon(getRandomIcon())
             }
 
-            setLasagnaCaught(false)
-            lasagna.current.y = -30;
-            lasagna.current.x = Math.random() * (canvasRef.current?.width - lasagna.current?.width);
+            setIconCaught(false)
+            Icon.current.y = -30;
+            Icon.current.x = Math.random() * (canvasRef.current?.width - Icon.current?.width);
         }
     }
 
@@ -183,16 +183,16 @@ export default function Game()
     {
         if 
         (
-            player.current.x <= lasagna.current.x + lasagna.current?.width &&
-            player.current.x + player.current?.width >= lasagna.current.x &&
-            player.current.y <= lasagna.current.y + lasagna.current?.height &&
-            player.current.y + player.current?.height >= lasagna.current.y
+            player.current.x <= Icon.current.x + Icon.current?.width &&
+            player.current.x + player.current?.width >= Icon.current.x &&
+            player.current.y <= Icon.current.y + Icon.current?.height &&
+            player.current.y + player.current?.height >= Icon.current.y
         ) 
         {
-            lasagna.current.y = -30;
-            lasagna.current.x = Math.random() * (canvasRef.current?.width - lasagna.current?.width);
+            Icon.current.y = -30;
+            Icon.current.x = Math.random() * (canvasRef.current?.width - Icon.current?.width);
             setPoints((prev) => prev + 1);
-            setLasagnaCaught(true)
+            setIconCaught(true)
             const newIcon = getRandomIcon();
             setRandomIcon(newIcon);
         }
@@ -202,21 +202,21 @@ export default function Game()
         if (isPaused) return;
 
         if (points > 12) {
-            lasagna.current.speed = 1.6;
+            Icon.current.speed = 1.6;
         }
         if (points > 25) {
-            lasagna.current.speed = 2;
+            Icon.current.speed = 2;
         }
         if (points > 45) {
-            lasagna.current.speed = 2.3;
+            Icon.current.speed = 2.3;
             player.current.speed = 3.3;
         }
         if (points > 80) {
-            lasagna.current.speed = 2.7;
+            Icon.current.speed = 2.7;
             player.current.speed = 4.0;
         }
         if (points > 120) {
-            lasagna.current.speed = 3.3;
+            Icon.current.speed = 3.3;
             player.current.speed = 5;
         }
     }, [points, isPaused]);
@@ -237,16 +237,16 @@ export default function Game()
     {
         if (isPaused) return;
         clear();
-        drawLasagnaAndPlayer();
+        drawIconAndPlayer();
         detectCollision();
         movePlayer();
-        moveLasagna();
+        moveIcon();
         animationframe = requestAnimationFrame(update);
     }
 
     useEffect(() => 
     {
-        lasagnaImgRef.current.onload = () =>
+        IconImgRef.current.onload = () =>
         {
             if (animationframe)
             {
@@ -258,7 +258,7 @@ export default function Game()
 
     useEffect(() => 
     {
-        lasagnaImgRef.current.src = randomIcon;
+        IconImgRef.current.src = randomIcon;
     },[randomIcon])
 
     useEffect(() => 
@@ -285,15 +285,15 @@ export default function Game()
         if (!isPaused) 
         {
             prevSpeedPlayer.current = player.current.speed;
-            prevSpeedLasagna.current = lasagna.current.speed;
+            prevSpeedIcon.current = Icon.current.speed;
             player.current.speed = 0;
-            lasagna.current.speed = 0;
+            Icon.current.speed = 0;
             console.log('juego pausado');
         } 
         else 
         {
             player.current.speed = prevSpeedPlayer.current;
-            lasagna.current.speed = prevSpeedLasagna.current;
+            Icon.current.speed = prevSpeedIcon.current;
             console.log('juego reanudado')
             update();
         }

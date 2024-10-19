@@ -1,7 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './information.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTemperatureHalf, faEarthAmericas, faDroplet, faBullseye,faQuestion , faSun, faUserSecret, faFrog, faFish, faWater, faSeedling, faTemperatureQuarter, faLemon, faSoap, faHeart, faStar} from '@fortawesome/free-solid-svg-icons';
+import { faTemperatureHalf, faEarthAmericas, faDroplet, faSun, faUserSecret, faFrog, faFish, faWater, faSeedling, faTemperatureQuarter, faLemon, faSoap, faHeart, faStar} from '@fortawesome/free-solid-svg-icons';
 
 export default function InformationPage() {
     return (
