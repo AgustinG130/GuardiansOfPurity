@@ -1,70 +1,58 @@
-# Getting Started with Create React App
+# Guardians of Purity 🌊
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was created by the group UCU-CODE-PDE with : 
+- [React.js](https://react.dev/).
+- [Bootstrap 5.3.3](https://getbootstrap.com/)
 
-## Available Scripts
+## Info 
+- Our team developed an educational game and a complementary website.
+- The website explains the game rules and provides contextual information on water pollution, focusing on the impact of trash on aquatic ecosystems. 
+- The game is based on the GLOBE (hydrosphere) protocol, where the character collects trash that falls into the water.
+- It uses pH as a game mechanism: when the pH is not neutral, the player loses, symbolizing the loss of balance in ecosystems.
+- The importance of this project lies in the need to educate new generations about water pollution and its effects on marine life and human health.
+  
+### For more info on the architecture and our project objectives visit : [Techinal Document of the project](https://docs.google.com/document/d/1TL145GFWfE_8CuJ2jvt9Fvxjc2WLYK433BOlj8Vzh5s/edit?usp=sharing)
 
-In the project directory, you can run:
+## Web App ☁️
 
-### `npm start`
+We deployed our website on vercel! : [Guardians Of Purity Website](https://guardians-of-purity.vercel.app/)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Preview 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+[![PREVIEW](/public/PREVIEW.png)](https://guardians-of-purity.vercel.app/)
 
-### `npm test`
+## Installation
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+If you want to deploy the project locally
 
-### `npm run build`
+### Requirements ✔️
+- [Node.js](https://nodejs.org/en)
+- [npm](https://www.npmjs.com/)
+- [VSCode](https://code.visualstudio.com/download)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Clone the repository
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<pre><code class="python">git clone https://github.com/AgustinG130/GuardiansOfPurity.git</code></pre>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Installing dependencies
 
-### `npm run eject`
+<pre><code class="python">npm install</code></pre>
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+or
+<pre><code class="python">yarn install</code></pre>
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Run
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+In the terminal write :
+<pre><code class="python">npm start</code></pre>
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Open 🚀
+In your browser open this link to see the project :
+<pre><code class="python">http://localhost:3000/</code></pre>
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# UCU-CODE-PDE Members
+- Ignacio Rodríguez
+- Nicolás González
+- Micaela Procofio
+- Agustín García
+- Juliana Hernández
