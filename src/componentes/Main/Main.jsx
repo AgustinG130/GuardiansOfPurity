@@ -67,7 +67,7 @@ function Main() {
                     <div className="popup-inner">
                         <Instructions/>
                         <div className='close-btn-container'>
-                            <button className='close-btn' onClick={togglePopup}>CLOSE</button>
+                            <button className='close-btn' style={{ fontSize: '26px', fontWeight: '700', fontFamily:'monospace', color:'#10506b'}} onClick={togglePopup}>CLOSE</button>
                         </div>
                     </div>
                 </div>

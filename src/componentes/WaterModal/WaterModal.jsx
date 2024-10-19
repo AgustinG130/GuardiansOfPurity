@@ -13,9 +13,9 @@ const WaterModal = () => {
       Array.from({ length: 50 }).forEach(() => {
         const drop = document.createElement('div');
         drop.classList.add(`rain-drop${set}`);
-        drop.style.left = `${Math.random() * 100}vw`; // Random horizontal position
-        drop.style.animationDuration = `${Math.random() * 3 + 2}s`; // Random speed
-        drop.style.animationDelay = `${Math.random() * 2}s`; // Random delay
+        drop.style.left = `${Math.random() * 100}vw`; 
+        drop.style.animationDuration = `${Math.random() * 3 + 2}s`; 
+        drop.style.animationDelay = `${Math.random() * 2}s`; 
         container.appendChild(drop);
       });
     }
