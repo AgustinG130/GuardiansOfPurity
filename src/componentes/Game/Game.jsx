@@ -17,7 +17,7 @@ export default function Game()
 
     const [points, setPoints] = useState(0);
     const [IconCaught, setIconCaught] = useState(false)
-    const [phLevel, setPhLevel] = useState(7.0)
+    const [phLevel, setPhLevel] = useState(7.5)
     const [isPaused, setIsPaused] = useState(false); 
     const [information, setInformation] = useState(false);
 
@@ -73,12 +73,6 @@ export default function Game()
             if (e.key === "ArrowLeft" || e.key === "Left") 
             {
                 player.current.dx =- player.current.speed;
-            }
-            if (e.key === "i") {
-                toggleInstruction();
-            }
-            if (e.key === "Escape") {
-                togglePause();
             }
         };
 
@@ -148,7 +142,7 @@ export default function Game()
         {
             if (!IconCaught && IconImgRef.current?.src.includes(soap) || IconImgRef.current?.src.includes(jugDetergent)) 
             {
-                marginTop -= 3;
+                marginTop -= 2;
                 setPhLevel((ph) => ph + 0.5)
 
                 const lineElement = document.getElementById('line');
@@ -161,7 +155,7 @@ export default function Game()
             }
             else if (!IconCaught && IconImgRef.current?.src.includes(bottleDroplet) || IconImgRef.current?.src.includes(lemon))
             {
-                marginTop += 3;
+                marginTop += 2;
                 setPhLevel((ph) => ph - 0.5)
 
                 const lineElement = document.getElementById('line');
