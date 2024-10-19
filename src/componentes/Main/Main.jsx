@@ -32,8 +32,8 @@ function Main() {
                 <div className="info-page">
                     <Information/>
                     <div className='mt-3 close-btn-container'>
-                        <button className={`menu-btn d-flex justify-content-center align-items-center`} style={{ fontSize: '26px', fontWeight: '700', fontFamily:'monospace', color:'#10506b'}} onClick={() => {  toggleInformation();}}> GO BACK </button>
-                        <button className={`menu-btn d-flex justify-content-center align-items-center`} style={{ fontSize: '26px', fontWeight: '700', fontFamily:'monospace', color:'#10506b'}} onClick={() => { toggleNext(); toggleInformation();}}>NEXT</button>
+                        <button className={`menu-btn d-flex justify-content-center align-items-center col-2 col-sm-6`} style={{ fontSize: '26px', fontWeight: '700', fontFamily:'monospace', color:'#10506b'}} onClick={() => {  toggleInformation();}}> GO BACK </button>
+                        <button className={`menu-btn d-flex justify-content-center align-items-center col-2 col-sm-6 `} style={{ fontSize: '26px', fontWeight: '700', fontFamily:'monospace', color:'#10506b'}} onClick={() => { toggleNext(); toggleInformation();}}>NEXT</button>
                     </div>
                 </div>
             ) }
@@ -42,13 +42,13 @@ function Main() {
                     <h1 id='title' className='menu-title d-flex flex-row justify-content-center align-items-center '>Guardians of Purity</h1>
                     <div className='main-menu'>
                         <div className='mb-3 d-flex flex-row justify-content-center align-items-center'>
-                            <button className={`menu-btn d-flex justify-content-center align-items-center`} style={{ fontSize: '26px', fontWeight: '700', fontFamily:'monospace', color:'#10506b'}} onClick={toggleGame}>PLAY</button>
+                            <button className={`menu-btn d-flex justify-content-center align-items-center col-6 col-md-6 col-lg-4 col-xl-3`} style={{ fontSize: '26px', fontWeight: '700', fontFamily:'monospace', color:'#10506b'}} onClick={toggleGame}>PLAY</button>
                         </div>
                         <div className='mb-3 d-flex flex-row justify-content-center align-items-center'>
-                            <button className={`menu-btn d-flex justify-content-center align-items-center`} style={{ fontSize: '26px', fontWeight: '700', fontFamily:'monospace', color:'#10506b'}} onClick={togglePopup} >INSTRUCTIONS</button>
+                            <button className={`menu-btn d-flex justify-content-center align-items-center col-6 col-md-6 col-lg-4 col-xl-3`} style={{ fontSize: '26px', fontWeight: '700', fontFamily:'monospace', color:'#10506b'}} onClick={togglePopup} >INSTRUCTIONS</button>
                         </div>
                         <div className='mb-3 d-flex flex-row justify-content-center align-items-center'>
-                            <button className={`menu-btn d-flex justify-content-center align-items-center`} style={{ fontSize: '26px', fontWeight: '700', fontFamily:'monospace', color:'#10506b'}} onClick={() => { toggleNext(); toggleInformation(); }}> GO BACK </button>
+                            <button className={`menu-btn d-flex justify-content-center align-items-center col-6 col-md-6 col-lg-4 col-xl-3`} style={{ fontSize: '26px', fontWeight: '700', fontFamily:'monospace', color:'#10506b'}} onClick={() => { toggleNext(); toggleInformation(); }}> GO BACK </button>
                         </div>
                     </div>
                 </div>
@@ -63,7 +63,7 @@ function Main() {
                 
             )}
             {showPopup && (
-                <div className="popup">
+                <div className="popup col-12 col-sm-12 col-xl-8 col-md-10">
                     <div className="popup-inner">
                         <Instructions/>
                         <div className='close-btn-container'>
@@ -76,7 +76,7 @@ function Main() {
                 <div className='justify-content-center d-flex flex-column align-items-center'>
                     <h1 id='title' className='menu-title d-flex fs-md-3 flex-row justify-content-center align-items-center text-center'>Guardians of Purity</h1>
                     <div className='mb-3 d-flex col-6 col-sm-12 flex-column justify-content-center align-items-center'>
-                        <button id="get-started" className={`menu-btn d-flex justify-content-center align-items-center col-6`} onClick={toggleInformation}>GET STARTED</button>
+                        <button id="get-started" className={`menu-btn d-flex justify-content-center align-items-center col-3 col-sm-12`} onClick={toggleInformation}>GET STARTED</button>
                     </div>
                 </div>
             ) }
@@ -87,4 +87,3 @@ function Main() {
   }
  
   export default Main;
-  
