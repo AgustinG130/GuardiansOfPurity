@@ -39,7 +39,7 @@ function Main() {
             ) }
             { next && !game && !showPopup && (
                 <div>
-                    <h1 id='title' className='menu-title d-flex flex-row justify-content-center align-items-center '>Guardians of Purity</h1>
+                    <h1 id='title' className='menu-title d-flex fs-md-3 flex-row justify-content-center align-items-center text-center'>Guardians of Purity</h1>
                     <div className='main-menu'>
                         <div className='mb-3 d-flex flex-row justify-content-center align-items-center'>
                             <button className={`menu-btn d-flex justify-content-center align-items-center col-6 col-md-6 col-lg-4 col-xl-3`} style={{ fontSize: '26px', fontWeight: '700', fontFamily:'monospace', color:'#10506b'}} onClick={toggleGame}>PLAY</button>
