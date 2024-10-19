@@ -146,7 +146,20 @@ export default function Game()
 
         if (lasagna.current.y > canvasRef.current?.height) 
         {
-            if (!lasagnaCaught) 
+            if (!lasagnaCaught && lasagnaImgRef.current?.src.includes(soap) || lasagnaImgRef.current?.src.includes(jugDetergent)) 
+            {
+                marginTop -= 3;
+                setPhLevel((ph) => ph + 0.5)
+
+                const lineElement = document.getElementById('line');
+                
+                if (lineElement) 
+                {
+                    lineElement.style.marginTop = `${marginTop}rem`;
+                }
+                setRandomIcon(getRandomIcon())
+            }
+            else if (!lasagnaCaught && lasagnaImgRef.current?.src.includes(bottleDroplet) || lasagnaImgRef.current?.src.includes(lemon))
             {
                 marginTop += 3;
                 setPhLevel((ph) => ph - 0.5)
@@ -250,9 +263,15 @@ export default function Game()
 
     useEffect(() => 
     {
-        if (phLevel < 6.0) 
+        console.log(phLevel)
+        if (phLevel < 6.5) 
         {
             alert('Has perdido. El pH ha bajado demasiado.');
+            window.location.reload();
+        }
+        else if(phLevel > 8.5)
+        {
+            alert('Has perdido. El pH ha subido demasiado.');
             window.location.reload();
         }
     }, [phLevel]);
