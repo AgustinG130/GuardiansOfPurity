@@ -6,7 +6,7 @@ function App() {
   return ( 
       <div className="App">
         <header className="App-header">
-          <div className="col-md-12">
+          <div className="col-sm-12 col-6">
           <WaterModal/> 
           <Main/>       
           </div>

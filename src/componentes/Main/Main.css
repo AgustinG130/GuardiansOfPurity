@@ -34,7 +34,8 @@
     width: 400px;
 }
   
-#title{
+#title
+{
     font-size: 50px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color: #10506b;
@@ -95,4 +96,39 @@ ul {
 .popup-inner {
     padding: 20px; 
     border-radius: 10px;
+}
+
+#get-started
+{
+    font-size: 26px;
+    font-weight: 700; 
+    font-family:monospace; 
+    color:#10506b;
+}
+
+@media (max-width: 262px)
+{
+    #title
+    {
+        font-size: 30px;
+    }
+
+    #get-started
+    {
+        font-size: 20px;
+        scale: 0.70;
+    }
+}
+
+@media (max-width: 157px)
+{
+    #title
+    {
+        word-break: break-all;
+    }
+
+    #get-started
+    {
+        scale: 0.40
+    }
 }

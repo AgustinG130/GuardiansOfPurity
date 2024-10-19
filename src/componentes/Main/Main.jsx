@@ -67,18 +67,16 @@ function Main() {
                     <div className="popup-inner">
                         <Instructions/>
                         <div className='close-btn-container'>
-                            <button className='close-btn' style={{ fontSize: '26px', fontWeight: '700', fontFamily:'monospace', color:'#10506b'}} onClick={togglePopup}>CLOSE</button>
+                            <button className='close-btn' onClick={togglePopup}>CLOSE</button>
                         </div>
                     </div>
                 </div>
              )}
             {!next && !information && !game && !showPopup && (
-                <div>
-                    <h1 id='title' className='menu-title d-flex flex-row justify-content-center align-items-center '>Guardians of Purity</h1>
-                    <div className='main-menu'>
-                        <div className='mb-3 d-flex flex-row justify-content-center align-items-center'>
-                            <button className={`menu-btn d-flex justify-content-center align-items-center`} style={{ fontSize: '26px', fontWeight: '700', fontFamily:'monospace' ,color:'#10506b'}} onClick={toggleInformation}>GET STARTED</button>
-                        </div>
+                <div className='justify-content-center d-flex flex-column align-items-center'>
+                    <h1 id='title' className='menu-title d-flex fs-md-3 flex-row justify-content-center align-items-center text-center'>Guardians of Purity</h1>
+                    <div className='mb-3 d-flex col-6 col-sm-12 flex-column justify-content-center align-items-center'>
+                        <button id="get-started" className={`menu-btn d-flex justify-content-center align-items-center col-6`} onClick={toggleInformation}>GET STARTED</button>
                     </div>
                 </div>
             ) }
