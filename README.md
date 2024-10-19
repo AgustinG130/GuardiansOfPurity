@@ -3,6 +3,8 @@
 This project was created by the group UCU-CODE-PDE with : 
 - [React.js](https://react.dev/).
 - [Bootstrap 5.3.3](https://getbootstrap.com/)
+- [FontAwesome Icons library](https://fontawesome.com/icons) 
+- [React-router-dom library](https://www.npmjs.com/package/react-router-dom)
 
 ## Info 
 - Our team developed an educational game and a complementary website.
