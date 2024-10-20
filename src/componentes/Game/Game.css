@@ -1,15 +1,17 @@
 #gameCanvas 
 {
     background-image: url('../Game/img/background-gamex4.png');
-    background-size:1100px; 
+    background-size:cover; 
+    width: 70%; 
+    max-height: 80vh; 
     display: block;
-    margin: 0 auto;
+    margin-left:40px;
     background-position: center;
 }
 
 #points
 {
-    font-size: 35px;
+    font-size: 2.5vw;
     font-weight: bold;
     font-family: 'Courier New', Courier, monospace;
     color: #0b374a;
@@ -29,13 +31,14 @@
     display: flex;
     justify-content: center;
     align-items:center;
+    
 }
 
 #ph
 {
-    width: 160px;
-    height: 500px;
-    align-items: end;
+    width: 15%;
+    max-height: 500px;
+    align-items: flex-end;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -87,3 +90,5 @@
 {
     background: rgba(31, 102, 140, 0.4); 
 }
+
+
