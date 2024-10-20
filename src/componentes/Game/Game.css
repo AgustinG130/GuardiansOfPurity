@@ -2,8 +2,8 @@
 {
     background-image: url('../Game/img/background-gamex4.png');
     background-size:cover; 
-    width: 70%; 
-    max-height: 80vh; 
+    width: 80%; 
+    max-height: 90vh; 
     display: block;
     margin-left:40px;
     background-position: center;
@@ -90,5 +90,4 @@
 {
     background: rgba(31, 102, 140, 0.4); 
 }
-
 
