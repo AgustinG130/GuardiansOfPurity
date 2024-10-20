@@ -62,7 +62,7 @@ export default function Game()
         ctxRef.current = canvas.getContext("2d");
 
         player.current.x = canvas.width / 2 - player.current.width / 2; 
-        player.current.y = canvas.height - player.current.height - 60;
+        player.current.y = canvas.height - player.current.height - 100;
 
         const handleKeyDown = (e) => 
         {
