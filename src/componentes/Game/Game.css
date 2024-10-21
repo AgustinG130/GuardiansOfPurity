@@ -1,18 +1,18 @@
 #gameCanvas 
 {
     background-image: url('../Game/img/background-gamex4.png');
-    background-size:cover; 
+    background-size: cover;
     width: 80%; 
     max-height: 90vh; 
     display: block;
     margin-left:40px;
-    background-position: center;
+    background-position: center 20px;
+    background-repeat: no-repeat; 
+    padding-top: 18px;
 }
 
 #points
 {
-    font-size: 2.5vw;
-    font-weight: bold;
     font-family: 'Courier New', Courier, monospace;
     color: #0b374a;
 }
@@ -37,7 +37,7 @@
 #ph
 {
     width: 15%;
-    max-height: 500px;
+    max-height: 460px;
     align-items: flex-end;
     display: flex;
     flex-direction: column;
@@ -46,6 +46,7 @@
     background-position: center;
     background-repeat: no-repeat;
     background-image: url("../Game/img/PH-water-level.png");
+    margin-top: 20px;
 }
 
 .popup-game 

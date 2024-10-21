@@ -310,15 +310,15 @@ export default function Game()
             </div>
             )}
             <div id='game'>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width:"100%" }}>
-                    <label id='points'>Points: {points}</label>
+                <div className='d-flex justify-content-between align-items-center' style={{ width:"100%" }}>
+                    <label id='points' className='fs-2 fw-bold' style={{marginLeft:'40px'}}>Points: {points}</label>
                     <div id='buttons' style={{display:"flex", gap:"15px"}}>
                         <PauseButton onClick={togglePause} isPaused={isPaused} />
                         <InstructionButton onClickInstruction={toggleInstruction} information={information} />
                     </div>
                 </div>
                 <div id='background' style={{ display: "flex" }}>
-                    <canvas ref={canvasRef} id="gameCanvas" width="800" height="500"></canvas>
+                    <canvas ref={canvasRef} id="gameCanvas" width="830" height="520"></canvas>
                     <div id="ph">
                         <div id="line" className="line"></div>
                     </div>
